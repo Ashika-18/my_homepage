@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <h1>Your Name</h1>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section id="about" class="mb-5">
+            <h2>About Me</h2>
+            <p>45歳からエンジニアへの転身を目指し、日々学習に励んでいます。これまでの製造業での経験と、運転手として培ってきた責任感、正確性、問題解決能力を活かし、貴社に貢献したいと考えております。幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2>Skills</h2>
+            <ul>
+                <li>JavaScript (ES6+)</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>SQLite3</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <section id="works" class="mb-5">
+            <h2>Works</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>掲示板</h3>
+                    <p>Node.js, Express, SQLite3 を使用して作成した掲示板アプリケーションです。主な機能として、投稿の作成 (Create)、閲覧 (Read)、更新 (Update)、削除 (Delete) の基本的なCRUD操作に加え、ユーザー間のコミュニケーションを促進するコメント機能、そして安全な利用のためのログイン・ログアウト機能を実装しました。データアクセスには Prisma を採用し、SQLインジェクションのリスク低減に努めました。</p>
+                    <a href="#">デモ</a>
+                    <a href="#">GitHub</a>
+                </div>
+                </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <h2>Contact</h2>
+            <p>お問い合わせはこちらから。</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-light py-3 text-center">
+        <p>&copy; 2025 Your Name</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
