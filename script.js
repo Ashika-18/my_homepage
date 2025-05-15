@@ -1,47 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('#contact form');
+    const contactForm = document.querySelector('#contact-form'); // 変更
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); //デフォルトの送信処理を停止
+            event.preventDefault(); // デフォルトの送信処理を停止
 
-            const nameInput = document.querySelector('#name');
-            const emailInput = document.querySelector('#email');
-            const messageInput = document.querySelector('#message');
+            const nameInput = document.querySelector('[name="user_name"]'); // name属性で選択
+            const emailInput = document.querySelector('[name="email"]'); // name属性で選択
+            const messageInput = document.querySelector('[name="message"]'); // name属性で選択
 
             let isValid = true;
-            let errors = []; //エラーメッセージを格納する配列
+            let errors = []; // エラーメッセージを格納する配列
 
             if (!nameInput.value.trim()) {
-                errors.push('お名前を入力して下さい。');
+                errors.push('お名前を入力してください。');
                 isValid = false;
             }
             if (!emailInput.value.trim()) {
-                errors.push('メールアドレスを入力して下さい。');
+                errors.push('メールアドレスを入力してください。');
                 isValid = false;
-
             } else if (!isValidEmail(emailInput.value.trim())) {
-                errors.push('有効なメールアドレスを入力して下さい。');
+                errors.push('有効なメールアドレスを入力してください。');
                 isValid = false;
             }
-
             if (!messageInput.value.trim()) {
-                errors.push('メッセージを入力して下さい。');
+                errors.push('メッセージを入力してください。');
                 isValid = false;
             }
 
             if (!isValid) {
-                //複数のエラーメッセージをまとめて表示
+                // 複数のエラーメッセージをまとめて表示
                 const errorMessage = errors.join('\n');
                 alert(`入力エラーがあります:\n${errorMessage}`);
             } else {
-                //ここでフォームの送信処理を行う(今はalert表示)
-                alert('お問い合わせありがとうございます!送信されました。');
-                contactForm.reset(); //フォームをリセット
+                // EmailJS を使ったフォーム送信処理
+                emailjs.sendForm('service_48qdz9d', 'template_vtde22k', this) // 'this' でフォーム全体を渡す
+                    .then(function() {
+                        alert('お問い合わせありがとうございます！送信されました。');
+                        contactForm.reset(); // フォームをリセット
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+                    });
             }
         });
 
         function isValidEmail(email) {
-            //簡単なメールアドレスのバリデーション
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }

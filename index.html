@@ -6,6 +6,12 @@
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+          emailjs.init('ByFt4jDu5sGL02O8C'); // ここにあなたの Public Key を記述
+      })();
+    </script>
 </head>
 <body>
     <header class="bg-dark text-white py-4">
@@ -49,20 +55,15 @@
         <section id="contact" class="mb-5">
             <h2>Contact</h2>
             <p>お問い合わせはこちらから。</p>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="5"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+            <form id="contact-form">
+                <input type="hidden" name="contact_number">
+                <label>Name</label>
+                <input type="text" name="user_name">
+                <label>Email</label>
+                <input type="email" name="email">
+                <label>Message</label>
+                <textarea name="message"></textarea>
+                <input type="submit" value="Send">
             </form>
         </section>
     </main>
