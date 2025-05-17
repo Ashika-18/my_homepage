@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    //toggle実装
+    const toggleTitles = document.querySelectorAll('.toggle-title');
+
+    toggleTitles.forEach(title => {
+        title.addEventListener('click', function() {
+            const content = this.nextElementSibling; // クリックされた見出しの次の要素（内容の div）を取得
+            if (content && content.classList.contains('toggle-content')) {
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    });
+
     const contactForm = document.querySelector('#contact-form'); // 変更
 
     if (contactForm) {

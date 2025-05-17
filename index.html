@@ -13,68 +13,93 @@
       })();
     </script>
 </head>
-<body>
-    <header class="bg-dark text-white py-4">
-        <div class="container">
-            <h1>Your Name</h1>
-        </div>
-    </header>
+<body style="background-color: black; color: white; margin: 0;">
+    <div id="enter-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 2em; cursor: pointer;">
+        ENTER
+    </div>
+    <div id="content" style="display: none;">
+        <header class="bg-dark text-white py-4">
+            <div class="container">
+                <h1>Your Name</h1>
+            </div>
+        </header>
 
-    <main class="container py-5">
-        <section id="about" class="mb-5">
-            <h2>About Me</h2>
-            <p>45歳からエンジニアへの転身を目指し、日々学習に励んでいます。これまでの製造業での経験と、運転手として培ってきた責任感、正確性、問題解決能力を活かし、貴社に貢献したいと考えております。幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
-        </section>
-
-        <section id="skills" class="mb-5">
-            <h2>Skills</h2>
-            <ul>
-                <li>JavaScript (ES6+)</li>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>SQLite3</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
-                <li>Git</li>
-            </ul>
-        </section>
-
-        <section id="works" class="mb-5">
-            <h2>Works</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>掲示板</h3>
-                    <p>Node.js, Express, SQLite3 を使用して作成した掲示板アプリケーションです。主な機能として、投稿の作成 (Create)、閲覧 (Read)、更新 (Update)、削除 (Delete) の基本的なCRUD操作に加え、ユーザー間のコミュニケーションを促進するコメント機能、そして安全な利用のためのログイン・ログアウト機能を実装しました。データアクセスには Prisma を採用し、SQLインジェクションのリスク低減に努めました。</p>
-                    <a href="#">デモ</a>
-                    <a href="#">GitHub</a>
+        <main class="container py-5">
+            <section id="about" class="mb-5">
+                <h2 class="toggle-title" style="cursor: pointer;">About Me</h2>
+                <div class="toggle-content" style="display: none;">
+                    <p>45歳からエンジニアへの転身を目指し、日々学習に励んでいます。
+                    これまでの製造業での経験と、運転手として培ってきた責任感、正確性、問題解決能力を活かし、貴社に貢献したいと考えております。
+                    幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。
+                    オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
                 </div>
+            </section>
+
+            <section id="skills" class="mb-5">
+                <h2 class="toggle-title" style="cursor: pointer;">Skills</h2>
+                <div class="toggle-content" style="display: none;">
+                    <ul>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>SQLite3</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                        <li>Git</li>
+                    </ul>
                 </div>
-        </section>
+            </section>
 
-        <section id="contact" class="mb-5">
-            <h2>Contact</h2>
-            <p>お問い合わせはこちらから。</p>
-            <form id="contact-form">
-                <input type="hidden" name="contact_number">
-                <label>Name</label>
-                <input type="text" name="user_name">
-                <label>Email</label>
-                <input type="email" name="email">
-                <label>Message</label>
-                <textarea name="message"></textarea>
-                <input type="submit" value="Send">
-            </form>
-        </section>
-    </main>
+            <section id="works" class="mb-5">
+                <h2 class="toggle-title" style="cursor: pointer;">Works</h2>
+                    <div class="toggle-content" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>掲示板</h3>
+                                <p>Node.js, Express, SQLite3 を使用して作成した掲示板アプリケーションです。主な機能として、投稿の作成 (Create)、閲覧 (Read)、更新 (Update)、削除 (Delete) の基本的なCRUD操作に加え、ユーザー間のコミュニケーションを促進するコメント機能、そして安全な利用のためのログイン・ログアウト機能を実装しました。データアクセスには Prisma を採用し、SQLインジェクションのリスク低減に努めました。</p>
+                                <a href="#">デモ</a>
+                                <a href="#">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
 
-    <footer class="bg-light py-3 text-center">
-        <p>&copy; 2025 Your Name</p>
-    </footer>
+            <section id="contact" class="mb-5">
+                <h2 class="toggle-title" style="cursor: pointer;">Contact</h2>
+                    <div class="toggle-content" style="display: none;">
+                        <p>お問い合わせはこちらから。</p>
+                        <form id="contact-form">
+                            <input type="hidden" name="contact_number">
+                            <label>Name</label>
+                            <input type="text" name="user_name">
+                            <label>Email</label>
+                            <input type="email" name="email">
+                            <label>Message</label>
+                            <textarea name="message"></textarea>
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+            </section>
+        </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+        <footer class="bg-light py-3 text-center">
+            <p>&copy; 2025 Your Name</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </div>
+    <script>
+        const enterScreen = document.getElementById('enter-screen');
+        const content = document.getElementById('content');
+
+        enterScreen.addEventListener('click', () => {
+            enterScreen.style.display = 'none';
+            content.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
