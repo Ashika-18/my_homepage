@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    //topのアニメーション
+    const topView = document.getElementById('top-view');
+    const content = document.getElementById('content');
+    const enterText = document.getElementById('enter-text');
+
+    console.log("content element:", content); // ★ 追加
+
+    enterText.addEventListener('click', () => {
+        if (topView) {
+            topView.style.display = 'none';
+        }
+        if (content) {
+            content.style.display = 'block';
+        }
+    });
+
     //toggle実装
     const toggleTitles = document.querySelectorAll('.toggle-title');
 

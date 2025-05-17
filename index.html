@@ -13,30 +13,29 @@
       })();
     </script>
 </head>
-<body style="background-color: black; color: white; margin: 0;">
-    <div id="enter-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 2em; cursor: pointer;">
-        ENTER
+<body>
+    <div id="top-view">
+        <div id="enter-text">ENTER</div>
     </div>
     <div id="content" style="display: none;">
         <header class="bg-dark text-white py-4">
             <div class="container">
-                <h1>Your Name</h1>
+                <h1>ASHIKA</h1>
             </div>
         </header>
 
         <main class="container py-5">
             <section id="about" class="mb-5">
-                <h2 class="toggle-title" style="cursor: pointer;">About Me</h2>
+                <h2 class="toggle-title">About Me</h2>
                 <div class="toggle-content" style="display: none;">
-                    <p>45歳からエンジニアへの転身を目指し、日々学習に励んでいます。
-                    これまでの製造業での経験と、運転手として培ってきた責任感、正確性、問題解決能力を活かし、貴社に貢献したいと考えております。
-                    幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。
-                    オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
+                    <p>45歳からエンジニアへの転身を目指し日々学習に励んでいます。これまでの製造業や運転手としての経験で培った責任感、正確性、問題解決能力を活かし、
+                        エンジニアとして貢献したいと考えております。幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。
+                        オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
                 </div>
             </section>
 
             <section id="skills" class="mb-5">
-                <h2 class="toggle-title" style="cursor: pointer;">Skills</h2>
+                <h2 class="toggle-title">Skills</h2>
                 <div class="toggle-content" style="display: none;">
                     <ul>
                         <li>JavaScript (ES6+)</li>
@@ -52,7 +51,7 @@
             </section>
 
             <section id="works" class="mb-5">
-                <h2 class="toggle-title" style="cursor: pointer;">Works</h2>
+                <h2 class="toggle-title">Works</h2>
                     <div class="toggle-content" style="display: none;">
                         <div class="row">
                             <div class="col-md-6">
@@ -66,7 +65,7 @@
             </section>
 
             <section id="contact" class="mb-5">
-                <h2 class="toggle-title" style="cursor: pointer;">Contact</h2>
+                <h2 class="toggle-title">Contact</h2>
                     <div class="toggle-content" style="display: none;">
                         <p>お問い合わせはこちらから。</p>
                         <form id="contact-form">
@@ -84,22 +83,24 @@
         </main>
 
         <footer class="bg-light py-3 text-center">
-            <p>&copy; 2025 Your Name</p>
+            <p>&copy; 2025 Ashika.com</p>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="script.js"></script>
+        
     </div>
     <script>
-        const enterScreen = document.getElementById('enter-screen');
+        const topView = document.getElementById('top-view');
         const content = document.getElementById('content');
+        const enterText = document.getElementById('enter-text');
 
-        enterScreen.addEventListener('click', () => {
-            enterScreen.style.display = 'none';
+        enterText.addEventListener('click', () => {
+            topView.style.display = 'none';
             content.style.display = 'block';
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
