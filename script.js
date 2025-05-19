@@ -5,15 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = document.getElementById('content');
     const enterText = document.getElementById('enter-text');
 
-    console.log("content element:", content); // ★ 追加
-
     enterText.addEventListener('click', () => {
-        if (topView) {
-            topView.style.display = 'none';
-        }
-        if (content) {
-            content.style.display = 'block';
-        }
+        topView.classList.add('top-view-hidden');
+        content.style.display = 'block';
+        // アニメーションが完了してから #top-view の display を none にする
+        setTimeout(() => {
+            content.classList.add('content-visible');
+            // contentのアニメーションが終わってから #top-view を非表示にする
+            setTimeout(() => {
+                topView.style.display = 'none';
+            }, 500);
+        }, 10); // CSSのトランジション時間と合わせる
+        
     });
 
     //toggle実装
@@ -21,13 +24,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     toggleTitles.forEach(title => {
         title.addEventListener('click', function() {
-            const content = this.nextElementSibling; // クリックされた見出しの次の要素（内容の div）を取得
-            if (content && content.classList.contains('toggle-content')) {
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            const contentDiv = this.nextElementSibling; // クリックされた見出しの次の要素（内容の div）を取得
+            if (contentDiv && contentDiv.classList.contains('toggle-content')) {
+                contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+
+                //親のsection要素を取得
+                const section = this.closest('section');
+                if (section) {
+                    //他のアクティブなセクションからクラスを削除
+                    document.querySelectorAll('section.section-active').forEach(activeSection => {
+                        if (activeSection !== section) {
+                            activeSection.classList.remove('section-active');
+                        }
+                    });
+                    //クリックされたセクションにアクティブクラスを追加/削除
+                    section.classList.toggle('section-active');
+                }
             }
         });
     });
 
+    //問い合わせフォーム
     const contactForm = document.querySelector('#contact-form'); // 変更
 
     if (contactForm) {

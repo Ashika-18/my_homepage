@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Ashika_HP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
       (function() {
-          emailjs.init('ByFt4jDu5sGL02O8C'); // ここにあなたの Public Key を記述
+          emailjs.init(EMAILJS_PUBLIC_KEY); 
       })();
     </script>
 </head>
@@ -18,7 +20,7 @@
         <div id="enter-text">ENTER</div>
     </div>
     <div id="content" style="display: none;">
-        <header class="bg-dark text-white py-4">
+        <header id="header" class="bg-dark text-white py-4">
             <div class="container">
                 <h1>ASHIKA</h1>
             </div>
@@ -28,7 +30,7 @@
             <section id="about" class="mb-5">
                 <h2 class="toggle-title">About Me</h2>
                 <div class="toggle-content" style="display: none;">
-                    <p>45歳からエンジニアへの転身を目指し日々学習に励んでいます。これまでの製造業や運転手としての経験で培った責任感、正確性、問題解決能力を活かし、
+                    <p>43歳からエンジニアへの転身を目指し日々学習に励んでいます。これまでの製造業や運転手としての経験で培った責任感、正確性、問題解決能力を活かし、
                         エンジニアとして貢献したいと考えております。幼い頃から物作りが好きで、その熱意がエンジニアという道を志す原動力となりました。
                         オンラインスクールでプログラミングの基礎を学び、その後もNode.jsやWeb開発について独学で学習を続けています。</p>
                 </div>
@@ -71,11 +73,11 @@
                         <form id="contact-form">
                             <input type="hidden" name="contact_number">
                             <label>Name</label>
-                            <input type="text" name="user_name">
+                            <input type="text" name="user_name" required>
                             <label>Email</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" required>
                             <label>Message</label>
-                            <textarea name="message"></textarea>
+                            <textarea name="message" required></textarea>
                             <input type="submit" value="Send">
                         </form>
                     </div>
@@ -91,16 +93,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
     </div>
-    <script>
-        const topView = document.getElementById('top-view');
-        const content = document.getElementById('content');
-        const enterText = document.getElementById('enter-text');
-
-        enterText.addEventListener('click', () => {
-            topView.style.display = 'none';
-            content.style.display = 'block';
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
