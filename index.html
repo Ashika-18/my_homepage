@@ -61,8 +61,8 @@
                                 <h3>掲示板</h3>
                                 <p>Node.js, Express, PostgreSQL を使用して作成した掲示板アプリケーションです。主な機能として、投稿の作成 (Create)、閲覧 (Read)、更新 (Update)、削除 (Delete) の基本的なCRUD操作に加え、ユーザー間のコミュニケーションを促進するコメント機能、そして安全な利用のためのログイン・ログアウト機能を実装しました。データアクセスには Prisma を採用し、SQLインジェクションのリスク低減に努めました。</p>
                                 <a href="https://ex-gen-app.onrender.com">掲示版</a>
-                                <a href="https://cram-school-zcla.onrender.com">家庭教師LP</a>
                                 <a href="https://github.com/Ashika-18">GitHub</a>
+                                <a href="#" data-toggle="modal" data-target="#katekyoLPModal" class="btn btn-info btn-sm ml-2">家庭教師LP 詳細</a>
                                 <a href="#" data-toggle="modal" data-target="#youtubeCloneModal" class="btn btn-info btn-sm">YouTube clone 詳細</a>
                             </div>
                         </div>
@@ -94,8 +94,59 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        
     </div>
+    <!-- 家庭教師LPの詳細 -->
+    <div class="modal fade" id="katekyoLPModal" tabindex="-1" aria-labelledby="katekyoLPModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="katekyoLPModalLabel">家庭教師LP プロジェクト詳細</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>プロジェクト概要</h4>
+                    <p>オンライン家庭教師サービスのランディングページとして作成しました。ターゲットユーザーは、家庭教師を探している学生や保護者です。サービスの特長やメリットを分かりやすく伝えることを目指しました。</p>
+    
+                    <h4>主な要素</h4>
+                    <ul>
+                        <li>サービスの概要と強み</li>
+                        <li>料金プラン</li>
+                        <li>講師紹介</li>
+                        <li>お客様の声</li>
+                        <li>よくある質問</li>
+                        <li>お問い合わせフォームへの導線</li>
+                    </ul>
+    
+                    <h4>使用技術</h4>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                    </ul>
+    
+                    <h4>工夫した点・学んだこと</h4>
+                    <ul>
+                        <li>ターゲットユーザーに響くコピーライティング</li>
+                        <li>視覚的に分かりやすいレイアウトとデザイン</li>
+                        <li>お問い合わせへの導線を意識したボタン配置</li>
+                        <li>レスポンシブデザインによる विभिन्न デバイスへの対応</li>
+                    </ul>
+    
+                    <h4>プロジェクトリンク</h4>
+                    <p>
+                        <a href="https://cram-school-zcla.onrender.com" target="_blank" class="btn btn-primary btn-sm mr-2">LPを見る (Render)</a>
+                        </p>
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- youtube_cloneの詳細 -->
     <div class="modal fade" id="youtubeCloneModal" tabindex="-1" aria-labelledby="youtubeCloneModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg"> <div class="modal-content">
                 <div class="modal-header">
