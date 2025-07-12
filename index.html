@@ -63,7 +63,7 @@
                                 <a href="https://ex-gen-app.onrender.com">掲示版</a>
                                 <a href="https://cram-school-zcla.onrender.com">家庭教師LP</a>
                                 <a href="https://github.com/Ashika-18">GitHub</a>
-                                <a href="https://youtube-clone-c5m1.onrender.com">YouTube clone</a>
+                                <a href="#" data-toggle="modal" data-target="#youtubeCloneModal" class="btn btn-info btn-sm">YouTube clone 詳細</a>
                             </div>
                         </div>
                     </div>
@@ -95,6 +95,55 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
+    </div>
+    <div class="modal fade" id="youtubeCloneModal" tabindex="-1" aria-labelledby="youtubeCloneModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg"> <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="youtubeCloneModalLabel">YouTube Clone プロジェクト詳細</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>プロジェクト概要</h4>
+                    <p>Node.js, Express, PostgreSQL を使用して作成した、YouTubeのような動画共有アプリケーションです。動画のアップロード、視聴、動画リストの表示などの機能を実装しました。</p>
+    
+                    <h4>主な機能</h4>
+                    <ul>
+                        <li>動画のアップロード機能（タイトル、説明付き）</li>
+                        <li>動画の一覧表示</li>
+                        <li>個別の動画再生ページ</li>
+                        <li>データベース（PostgreSQL）との連携（Prisma ORM使用）</li>
+                        <li>RESTful API設計</li>
+                    </ul>
+    
+                    <h4>使用技術</h4>
+                    <ul>
+                        <li><strong>バックエンド:</strong> Node.js, Express.js, TypeScript, Prisma ORM, PostgreSQL</li>
+                        <li><strong>フロントエンド:</strong> HTML5, CSS3, JavaScript (ES6+), Fetch API</li>
+                        <li><strong>デプロイ:</strong> Render.com, GitHub</li>
+                    </ul>
+    
+                    <h4>工夫した点・学んだこと</h4>
+                    <ul>
+                        <li>大規模な動画ファイルを扱うためのストリーミング技術やチャンクアップロードについて調査しました。</li>
+                        <li>データベーススキーマ設計（Prisma）を通じて、リレーションシップの重要性を深く理解しました。</li>
+                        <li>フロントエンドとバックエンド間のデータ連携（JSON API）の実践的な経験を積みました。</li>
+                        <li>エラーハンドリングとデプロイ環境でのトラブルシューティングの重要性を学びました。</li>
+                    </ul>
+                    
+                    <h4>プロジェクトリンク</h4>
+                    <p>
+                        <a href="https://youtube-clone-c5m1.onrender.com" target="_blank" class="btn btn-primary btn-sm mr-2">動くデモを見る (Render)</a>
+                        <a href="https://github.com/Ashika-18/youtube_clone" target="_blank" class="btn btn-secondary btn-sm">GitHubリポジトリ</a>
+                    </p>
+    
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
