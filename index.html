@@ -12,7 +12,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
       (function() {
-          emailjs.init(EMAILJS_PUBLIC_KEY); 
+          emailjs.init(EMAILJS_PUBLIC_KEY);
       })();
     </script>
 </head>
@@ -65,6 +65,14 @@
                                 <a href="#" data-toggle="modal" data-target="#katekyoLPModal" class="btn btn-info btn-sm ml-2">家庭教師LP 詳細</a>
                                 <a href="#" data-toggle="modal" data-target="#youtubeCloneModal" class="btn btn-info btn-sm">YouTube clone 詳細</a>
                             </div>
+
+                            <div class="col-md-6">
+                                <h3>ビンゴゲーム (開発中)</h3>
+                                <p>Node.js, Express, Socket.IO, TypeScript, PostgreSQL を使用して作成中のリアルタイムビンゴゲームです。複数のクライアントが同一の部屋に参加し、サーバー側で抽選された数字が全クライアントにリアルタイムで同期されます。基本的な数字抽選とカードへのマーク機能、およびルームシステムが動作しています。</p>
+                                <a href="https://bingo-game-mrbq.onrender.com" target="_blank" class="btn btn-primary btn-sm mr-2">動くデモを見る (Render)</a>
+                                <a href="https://github.com/Ashika-18/bingo_game.git" target="_blank" class="btn btn-secondary btn-sm">GitHubリポジトリ</a>
+                                <a href="#" data-toggle="modal" data-target="#bingoGameModal" class="btn btn-info btn-sm ml-2">ビンゴゲーム 詳細</a>
+                            </div>
                         </div>
                     </div>
             </section>
@@ -95,7 +103,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </div>
-    <!-- 家庭教師LPの詳細 -->
     <div class="modal fade" id="katekyoLPModal" tabindex="-1" aria-labelledby="katekyoLPModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -147,7 +154,6 @@
             </div>
         </div>
     </div>
-    <!-- youtube_cloneの詳細 -->
     <div class="modal fade" id="youtubeCloneModal" tabindex="-1" aria-labelledby="youtubeCloneModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg"> <div class="modal-content">
                 <div class="modal-header">
@@ -191,6 +197,62 @@
                     </p>
     
                     </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bingoGameModal" tabindex="-1" aria-labelledby="bingoGameModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bingoGameModalLabel">ビンゴゲーム プロジェクト詳細 (開発中)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>プロジェクト概要</h4>
+                    <p>Node.js, Express, Socket.IO, TypeScript, PostgreSQL を使用して作成中のリアルタイムビンゴゲームです。このプロジェクトでは、特にリアルタイム双方向通信の実現に注力しました。</p>
+    
+                    <h4>主な機能 (現時点)</h4>
+                    <ul>
+                        <li>**リアルタイム抽選:** サーバーで抽選されたビンゴ数字を、同一部屋の全クライアントにリアルタイムで同期表示。</li>
+                        <li>**ルームシステム:** 各ゲームが独立して進行するよう、異なる部屋への参加・管理機能。</li>
+                        <li>**ビンゴカード生成:** クライアント側でのランダムなビンゴカード生成と表示。</li>
+                        <li>**数字のマーク:** 抽選された数字に対応するカード上のセルを視覚的にマーク。</li>
+                    </ul>
+    
+                    <h4>使用技術</h4>
+                    <ul>
+                        <li><strong>バックエンド:</strong> Node.js, Express.js, Socket.IO, TypeScript, Prisma ORM, PostgreSQL</li>
+                        <li><strong>フロントエンド:</strong> HTML5, CSS3, JavaScript (ES6+), Fetch API</li>
+                        <li><strong>デプロイ:</strong> Render.com, GitHub</li>
+                    </ul>
+    
+                    <h4>工夫した点・学んだこと</h4>
+                    <ul>
+                        <li>**Socket.IO:** リアルタイム性の要求されるアプリケーションにおいて、Socket.IO を用いた双方向通信の設計と実装を経験しました。特に、ルーム機能を使って複数のゲームセッションを独立して管理するロジックを構築しました。</li>
+                        <li>**TypeScript:** 大規模なプロジェクトにおける型安全性の重要性と、開発効率向上への寄与を実践的に学びました。</li>
+                        <li>**データベース設計:** 抽選済み数字の履歴管理など、ゲームの状態をデータベースで永続化する設計を行いました。</li>
+                        <li>**デバッグと問題解決:** Socket.IO の通信エラーや DOM 操作のエラーなど、様々な問題をコンソールログや開発者ツールを駆使して解決しました。</li>
+                    </ul>
+                    
+                    <h4>今後の展望 (アピールポイント)</h4>
+                    <ul>
+                        <li>ビンゴ判定ロジックの実装と、ビンゴ成立時のゲーム終了処理。</li>
+                        <li>チャット機能など、プレイヤー間のインタラクションの追加。</li>
+                        <li>ユーザー認証機能の導入と、個人成績の保存。</li>
+                    </ul>
+    
+                    <h4>プロジェクトリンク</h4>
+                    <p>
+                        <a href="https://bingo-game-mrbq.onrender.com" target="_blank" class="btn btn-primary btn-sm mr-2">動くデモを見る (Render)</a>
+                        <a href="https://github.com/Ashika-18/bingo_game.git" target="_blank" class="btn btn-secondary btn-sm">GitHubリポジトリ</a>
+                    </p>
+    
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                 </div>
